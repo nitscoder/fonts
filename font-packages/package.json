@@ -1,0 +1,39 @@
+{
+  "name": "@nits/fonts",
+  "version": "1.0.0",
+  "description": "fonts that can be easily inported in typescript projects",
+  "main": "lib/index.js",
+  "types": "lb/index.d.ts",
+  "scripts": {
+    "test": "jest",
+    "build": "npm run clean && tsc --project tsconfig.json",
+    "copy-fonts": "copyfiles -a -u 1 src/fonts/**/*.ttf lib/",
+    "clean": "rimraf lib/",
+    "prepare": "npm run build && npm run copy-fonts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nitscoder/fonts.git"
+  },
+  "keywords": [
+    "typescript",
+    "fonts"
+  ],
+  "author": "Nitesh Singh",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/nitscoder/fonts/issues"
+  },
+  "homepage": "https://github.com/nitscoder/fonts#readme",
+  "files": [
+    "lib/**/*"
+  ],  
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
